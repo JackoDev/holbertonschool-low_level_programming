@@ -11,8 +11,9 @@
  */
 int main(void)
 {
-char texto[60]="and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-char *punt=texto;
+char tx[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+char *punt = tx;
+
 	write(2, punt, 60);
 	return (1);
 }
