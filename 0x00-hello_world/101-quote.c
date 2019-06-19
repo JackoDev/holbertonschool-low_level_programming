@@ -11,9 +11,10 @@
  */
 int main(void)
 {
-char tx[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+char tx[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 char *punt = tx;
 
-	write(2, punt, 60);
+	write(2, punt, 59);
+	putchar('\n');
 	return (1);
 }
