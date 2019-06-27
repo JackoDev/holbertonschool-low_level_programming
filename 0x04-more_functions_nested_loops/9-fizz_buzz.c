@@ -28,10 +28,7 @@ int main(void)
 		{
 			printf("%d", i);
 		}
-		if (i <= 99)
-		{
-			printf(" ");
-		}
+		printf(" ");
 		i++;
 	}
 	printf("\n");
