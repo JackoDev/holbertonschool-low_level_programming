@@ -1,8 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * print_square -  prints a square
- * @size: the size of the square
+ * main -  Fizz Buzz
+ *
  *
  * Return: its a void function.
  */
