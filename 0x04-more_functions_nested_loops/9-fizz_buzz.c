@@ -12,7 +12,7 @@ int main(void)
 
 	while (i <= 100)
 	{
-		if (((i % 5) == 0) && ((i % 3) == 0))
+		if ((i % 15) == 0)
 		{
 			printf("FizzBuzz");
 		}
@@ -28,9 +28,11 @@ int main(void)
 		{
 			printf("%d", i);
 		}
-		i++;
 		if (i <= 99)
+		{
 			printf(" ");
+		}
+		i++;
 	}
 	printf("\n");
 }
