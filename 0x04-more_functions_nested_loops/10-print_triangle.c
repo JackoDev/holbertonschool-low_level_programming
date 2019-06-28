@@ -32,7 +32,6 @@ void print_triangle(int size)
 			i = size - 1;
 			c++;
 		}
-		_putchar('\n');
 	}
 	else
 	{
