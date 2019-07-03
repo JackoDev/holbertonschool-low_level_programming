@@ -15,7 +15,6 @@ void rev_string(char *s)
 	{
 		i++;
 	}
-	
 	cont = i - 1;
 	char new[cont];
 
