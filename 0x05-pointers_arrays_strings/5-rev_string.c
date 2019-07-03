@@ -1,34 +1,47 @@
 #include "holberton.h"
 /**
- * _sterlen - give the len of string
- * @s: parameter
- * Return: return len
+ * _strlen - size of the str
+ * @s: string to review
+ * Return: size of the string
  */
-int _sterlen(char *s)
+int _strlen(char *s)
 {
-	int i, count = 0;
+	int cont = 0;
+	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
-	count++;
-
-	return (count);
+	{
+		cont++;
+	}
+	cont = i - 1;
+	return (cont);
 }
 /**
- * rev_string - print rev string
- * @s: parameter
+ * rev_string - prints a string in reverse, followed by a new line.
+ * @s: the pointer to the string
+ *
+ * Return: its a void function
  */
 void rev_string(char *s)
 {
-	int start;
-	int len;
-	char a, z;
+	int j = 0;
+	int cont;
 
-	len = _sterlen(s) - 1;
-	for (start = 0; start < len; start++)
+	cont = _strlen(s);
+	char new[cont];
+
+	while (cont >= 0)
 	{
-		a = s[start];
-		z = s[len];
-		s[start] = z;
-		s[len--] = a;
+		new[j] = s[cont];
+		cont--;
+		j++;
 	}
+
+	while (j >= 0)
+	{
+		s[cont] = new[cont];
+		cont++;
+		j--;
+	}
+	s[cont + 1] = '\0';
 }
