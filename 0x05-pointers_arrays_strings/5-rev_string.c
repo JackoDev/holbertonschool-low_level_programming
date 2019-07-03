@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * _strlen - size of the str
+ * _strl - size of the str
  * @s: string to review
  * Return: size of the string
  */
-int _strlen(char *s)
+int _strl(char *s)
 {
 	int cont = 0;
 	int i;
@@ -27,7 +27,7 @@ void rev_string(char *s)
 	int j = 0;
 	int cont;
 
-	cont = _strlen(s);
+	cont = _strl(s);
 	char new[cont];
 
 	while (cont >= 0)
