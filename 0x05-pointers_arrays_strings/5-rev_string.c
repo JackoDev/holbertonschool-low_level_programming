@@ -24,24 +24,15 @@ int _strl(char *s)
  */
 void rev_string(char *s)
 {
-	int j = 0;
-	int cont;
+	int a, b;
+	char ini, fin;
 
-	cont = _strl(s);
-	char new[cont];
-
-	while (cont >= 0)
+	b = _strl(s) - 1;
+	for (a = 0; a > b; a++)
 	{
-		new[j] = s[cont];
-		cont--;
-		j++;
+		ini = s[a];
+		fin = s[b];
+		s[a] = fin;
+		s[b--] = ini;
 	}
-
-	while (j >= 0)
-	{
-		s[cont] = new[cont];
-		cont++;
-		j--;
-	}
-	s[cont + 1] = '\0';
 }
