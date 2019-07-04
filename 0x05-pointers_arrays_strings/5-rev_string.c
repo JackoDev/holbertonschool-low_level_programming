@@ -12,9 +12,7 @@ int _strl(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		cont++;
-	}
-	cont = i - 1;
-	return (cont);
+	}	return (cont);
 }
 /**
  * rev_string - prints a string in reverse, followed by a new line.
@@ -28,7 +26,7 @@ void rev_string(char *s)
 	char ini, fin;
 
 	b = _strl(s) - 1;
-	for (a = 0; a > b; a++)
+	for (a = 0; a < b; a++)
 	{
 		ini = s[a];
 		fin = s[b];
