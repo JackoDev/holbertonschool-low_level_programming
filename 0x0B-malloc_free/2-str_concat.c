@@ -69,10 +69,11 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	new1 = malloc(_strlen_recursion(s1) * sizeof(char));
+	new1 = malloc((_strlen_recursion(s1) + _strlen_recursion(s2) + 1));
 	if (new1 == NULL)
 		return (NULL);
 
-	new1 = _strcpy(new1, s1);
-	return (_strcat(new1, s2));
+	_strcpy(new1, s1);
+	_strcat(new1, s2);
+	return (new1);
 }
