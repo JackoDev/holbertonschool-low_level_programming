@@ -50,7 +50,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	size = _strlen_recursion(str);
-	new = malloc( 1 + size * sizeof(char));
+	new = malloc(1 + size * sizeof(char));
 
 	if (new == NULL)
 		return (NULL);
