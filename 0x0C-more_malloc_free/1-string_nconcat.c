@@ -39,9 +39,9 @@ char *_strcpy(char *dest, char *src)
  * @n: number of bytes to use in src
  *Return: a pointer to the resulting string dest
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n, char *ant)
 {
-	int tamd = _strlen(dest);
+	int tamd = _strlen(ant);
 	int i;
 
 	for (i = 0; i < n && src[i] != '\0'; i++, tamd++)
@@ -74,6 +74,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (new == NULL)
 		return (NULL);
 	_strcpy(new, s1);
-	_strncat(new, s2, n);
+	_strncat(new, s2, n, s1);
 	return (new);
 }
