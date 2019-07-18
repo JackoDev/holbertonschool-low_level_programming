@@ -29,7 +29,7 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	/*dest[i] = '\0';*/
+	dest[i] = '\0';
 	return (dest);
 }
 /**
@@ -66,11 +66,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	size1 = _strlen(s1 + 1);
-	size2 = _strlen(s2 + 1);
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
 	if (n >= size2)
 		n = size2;
-	new = malloc(size1 + size2);
+	new = malloc(size1 + size2 + 1);
 	if (new == NULL)
 		return (NULL);
 	_strcpy(new, s1);
