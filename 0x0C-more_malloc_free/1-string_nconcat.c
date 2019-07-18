@@ -12,8 +12,7 @@ int _strlen(char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}
-/**
+}/**
  * _strcpy - copies the string pointed to by src, including the terminating
  * null byte (\0), to the buffer pointed to by dest.
  * @dest: the pointer to the string os destination
@@ -70,7 +69,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size2 = _strlen(s2);
 	if (n >= size2)
 		n = size2;
-	new = malloc(size1 + size2 + 1);
+	new = malloc(size1 + size2);
 	if (new == NULL)
 		return (NULL);
 	_strcpy(new, s1);
