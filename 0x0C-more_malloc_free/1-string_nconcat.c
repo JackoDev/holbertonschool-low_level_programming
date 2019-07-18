@@ -59,13 +59,14 @@ char *_strncat(char *dest, char *src, int n, char *ant)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new;
+	char *new, *tmp;
 	unsigned int size1, size2;
-
+	
+	tmp = "";
 	if (s1 == NULL)
-		s1 = "";
+		s1 = tmp;
 	if (s2 == NULL)
-		s2 = "";
+		s2 = tmp;
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
 	if (n >= size2)
