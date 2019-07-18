@@ -8,14 +8,35 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int tamd = _strlen_recursion(dest) - 1;
-	int i;
+	char *new;
+	int ac_new, i, j;
+	int size = ac;
 
-	for (i = 0; src[i] != '\0'; i++, tamd++)
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
+	for (ac_new = 0; ac_new < ac; ac_new++)
 	{
-		dest[tamd + 1] = src[i];
+		for (i = 0; av[ac_new][i]; i++)
+			size++;
 	}
-	dest[tamd + 1] = '\0';
-	return (dest);
-}
 
+	new = malloc(sizeof(char) * size + 1);
+
+	if (new == NULL)
+		return (NULL);
+
+	j = 0;
+
+	for (ac_new = 0; ac_new < ac; ac_new++)
+	{
+		for (i = 0; av[ac_new][i]; i++)
+		{
+			new[j++] = av[ac_new][i];
+		}
+		new[j++] = '\n';
+	}
+	new[size] = '\0';
+
+	return (new);
+}
