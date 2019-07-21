@@ -10,11 +10,11 @@ int main(void)
 	int i;
 
 	printf("%lu, %lu, ", a, b);
-	for (i = 2; i < 49; i++)
+	for (i = 2; i < 50; i++)
 	{
 		c = a + b;
 		printf("%lu", c);
-		if (i < 48)
+		if (i < 49)
 			printf(", ");
 		a = b;
 		b = c;
