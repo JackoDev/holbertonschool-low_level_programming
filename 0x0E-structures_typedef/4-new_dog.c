@@ -2,6 +2,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
+ * _strlen - returns the length of a string.
+ * @s: the pointer to a first integer
+ * Return: the length of a string
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i + 1);
+}
+/**
  * new_dog - create a dog structure
  * @name: type struct
  * @age: age of the dog
@@ -16,9 +31,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (new == NULL)
 		return (NULL);
 
-	(*new).name = name;
+	(*new).name = malloc(_strlen(name));
+	if ((*new).name == NULL)
+		return (NULL);
+	else
+		(*new).name = name;
+
 	(*new).age = age;
-	(*new).owner = owner;
+
+	(*new).owner = malloc(sizeof(_strlen(owner)));
+	if ((*new).owner == NULL)
+		return (NULL);
+	else
+		(*new).owner = owner;
 
 	return (new);
 }
