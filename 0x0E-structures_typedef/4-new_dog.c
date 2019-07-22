@@ -25,23 +25,30 @@ int _strlen(char *s)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *new;
+	dog_t *new;
 
-	new = malloc(sizeof(struct dog));
-	if (new == NULL)
+	new = malloc(sizeof(dog_t));
+	if (new == NULL || name == NULL || owner == NULL)
 		return (NULL);
 
 	(*new).name = malloc(_strlen(name));
 	if ((*new).name == NULL)
+	{
+		free(new->name);
 		return (NULL);
+	}
 	(*new).name = name;
 
 	(*new).age = age;
 
 	(*new).owner = malloc(sizeof(_strlen(owner)));
 	if ((*new).owner == NULL)
+	{
+		free(new->owner);
+		free(new);
 		return (NULL);
-	
+	}
+
 	(*new).owner = owner;
 
 	return (new);
