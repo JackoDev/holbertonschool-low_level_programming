@@ -34,16 +34,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	(*new).name = malloc(_strlen(name));
 	if ((*new).name == NULL)
 		return (NULL);
-	else
-		(*new).name = name;
+	(*new).name = name;
 
 	(*new).age = age;
 
 	(*new).owner = malloc(sizeof(_strlen(owner)));
 	if ((*new).owner == NULL)
 		return (NULL);
-	else
-		(*new).owner = owner;
+	
+	(*new).owner = owner;
 
 	return (new);
 }
