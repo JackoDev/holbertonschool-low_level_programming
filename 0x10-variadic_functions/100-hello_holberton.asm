@@ -1,17 +1,15 @@
-section .data                           ;.data starts here
-	msg db 10d,13d,"Hello, Holberton"	;String gets initialized
-	l equ $-msg			;Length Of String
-section .text				;.text starts here
-	global _start			;Moving to _start
-_start:					;_start label
-	mov rax,1			;Sys_Write Function
-	mov rdi,1			;Std_Out File Descriptor
-	mov rsi,msg			;Offset of msg
-	mov rdx,l			;Length Of msg
-	syscall				;Call the Kernel
-
-	mov rax,60			;Sys_Exit Function
-	mov rdi,0			;Sucessful Termination
-	syscall			;Call The Kernel
-end:					;ensection .data
-
+DATA SEGMENT
+	MESSAGE DB "Hello, Holberton$"
+ENDS
+CODE SEGMENT
+	ASSUME DS:DATA CS:CODE
+START:
+	MOV AX,DATA
+	MOV DS,AX
+	LEA DX,MESSAGE
+	MOV AH,9
+	INT 21H
+	MOV AH,4CH
+	INT 21H
+ENDS
+END START
