@@ -1,15 +1,16 @@
-DATA SEGMENT
-	MESSAGE DB "Hello, Holberton$"
-ENDS
-CODE SEGMENT
-	ASSUME DS:DATA CS:CODE
-START:
-	MOV AX,DATA
-	MOV DS,AX
-	LEA DX,MESSAGE
-	MOV AH,9
-	INT 21H
-	MOV AH,4CH
-	INT 21H
-ENDS
-END START
+section	.data
+	text db "Hello, Holberton",10
+
+section	.text
+	global _start
+
+_start:
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, text
+	mov rdx, 14
+	syscall
+
+	mov rax, 60
+	mov rdi, 0
+	syscall
