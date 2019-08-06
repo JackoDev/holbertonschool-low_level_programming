@@ -7,9 +7,10 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *new;
-	listint_t *newtwo;
+	listint_t *new, *newtwo;
 
+	if (*head == NULL || head == NULL)
+		return;
 	newtwo = *head;
 	while (newtwo != NULL && head != NULL)
 	{
