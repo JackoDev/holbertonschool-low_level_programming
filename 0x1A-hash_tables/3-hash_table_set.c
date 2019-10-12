@@ -23,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new->key = strdup(key), new->value = strdup(value);
 		if (new->key == NULL || new->value == NULL)
 			return (0);
-		new->next = NULL;}
+		new->next = NULL; }
 	else
 	{
 		tempo = ht->array[line];
@@ -36,12 +36,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				tempo->value = strdup(value);
 				if (tempo->value == NULL)
 					return (0);
-				return (1);}
-			tempo = tempo->next;}
+				return (1); }
+			tempo = tempo->next; }
 		tempo = ht->array[line];
 		new->key = strdup(key), new->value = strdup(value);
 		if (new->key == NULL || new->value == NULL)
 			return (0);
-		new->next = tempo, ht->array[line] = new;}
+		new->next = tempo, ht->array[line] = new; }
 	return (1);
 }
