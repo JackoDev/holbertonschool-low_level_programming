@@ -10,6 +10,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *tempo;
 
 	tempo = (*list)->next;
+
+	if (list == NULL)
+		return;
 	while (tempo != NULL)
 	{
 		while ((tempo->prev != NULL) && (tempo->n < tempo->prev->n))
