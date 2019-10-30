@@ -74,5 +74,8 @@ void quick_sort(int *array, size_t size)
 	int piv = size - 1;
 	int ini = 0;
 
+	if (array == NULL || size < 0)
+		return;
+
 	core_sort(array, ini, piv, size);
 }
