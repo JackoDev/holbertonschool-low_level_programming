@@ -58,9 +58,9 @@ void core_sort(int *array, size_t size, int piv, int ini)
 
 	if (ini < piv)
 	{
-		b = lomuto_part(array, ini, piv, size);
-		core_sort(array, ini, b - 1, size);
-		core_sort(array, b + 1, piv, size);
+		b = lomuto_part(array, size, piv, ini);
+		core_sort(array, size, b - 1, ini);
+		core_sort(array, size, piv, b + 1);
 	}
 }
 /**
@@ -74,8 +74,5 @@ void quick_sort(int *array, size_t size)
 	int piv = size - 1;
 	int ini = 0;
 
-	if (array == NULL || size < 0)
-		return;
-
-	core_sort(array, ini, piv, size);
+	core_sort(array, size, piv, ini);
 }
