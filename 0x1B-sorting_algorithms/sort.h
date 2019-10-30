@@ -21,6 +21,8 @@ int validate_order(int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-void swap_int(int a, int b);
-
+void swap_int(int *x, int *y);
+void quick_sort(int *array, size_t size);
+void core_sort(int *array, size_t size, int piv, int ini);
+int lomuto_part(int *array, size_t size, int piv, int ini);
 #endif
