@@ -21,4 +21,7 @@ int validate_order(int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 listint_t* swap_nodes(listint_t* node);
+void selection_sort(int *array, size_t size);
+void swap_int(int a, int b);
+
 #endif
