@@ -1,8 +1,8 @@
 #include "sort.h"
 /**
  * swap_int - swap two integers
- * @a: first integer
- * @b: second integer
+ * @x: first integer
+ * @y: second integer
  * Return: its a void function
  */
 void swap_int(int *x, int *y)
@@ -17,7 +17,7 @@ void swap_int(int *x, int *y)
  * lomuto_part - partition system for execute the quick sort
  * @array: the array of integers
  * @ini: the initial point to sort
- * @pivot: the pivot for the sort algorithm
+ * @piv: the pivot for the sort algorithm
  * @size: the size of the array
  * Return: a new point to continue the sort
  */
@@ -48,7 +48,7 @@ int lomuto_part(int *array, size_t size, int piv, int ini)
  * core_sort - recursive function to sort the sections of the array
  * @array: array of integers
  * @ini: the initial point to work by section
- * @pivot: the pivot of the sort
+ * @piv: the pivot of the sort
  * @size: size of the array
  * Return: its a void function
  */
